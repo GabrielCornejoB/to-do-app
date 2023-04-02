@@ -7,10 +7,10 @@ class TaskSerializer(serializers.HyperlinkedModelSerializer):
     
     class Meta:
         model = Task
-        fields = ['url', 'id', 'owner', 'title', 'description', 'completed']
+        fields = ['url', 'id', 'owner', 'title', 'description', 'completed', 'created']
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
-    tasks = serializers.HyperlinkedRelatedField(many=True, view_name='tasks-detail', read_only=True)
+    tasks = serializers.HyperlinkedRelatedField(many=True, view_name='task-detail', read_only=True)
     class Meta:
         model = User
-        fields = ['url', 'id', 'username', 'snippets']
+        fields = ['url', 'id', 'username', 'tasks']

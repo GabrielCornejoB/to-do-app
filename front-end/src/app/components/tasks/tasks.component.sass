@@ -83,6 +83,15 @@ $nav-height: 150px
                     padding: 15px 0
             .create-footer
                 height: 60px
-
         .tasks
+            display: flex
+            flex-direction: column
+            padding: 35px 0
+            align-items: center
             width: 50%
+            overflow-y: scroll
+            h2
+                color: var(--txt-black)
+                margin-bottom: 35px
+            app-task
+                width: 100%

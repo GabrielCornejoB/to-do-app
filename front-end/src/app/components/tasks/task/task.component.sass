@@ -1,0 +1,38 @@
+.task-container
+    width: 100%
+    display: grid
+    grid-template-columns: 35px auto 35px
+    column-gap: 30px
+    padding: 25px 50px
+    border-bottom: 1px solid var(--txt-light-color)
+    box-sizing: border-box
+    .checkbox
+        width: 35px
+        height: 35px
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 1px solid var(--button-color)
+        border-radius: 50%
+        cursor: pointer
+        &.completed
+            background: var(--button-color) 
+    .delete
+        width: 35px
+        height: 35px
+        display: flex
+        justify-content: center
+        align-items: center
+        background: var(--delete-color)
+        border-radius: 10px
+        cursor: pointer
+        transition: 0.3s
+        &:hover
+            background: var(--delete-hover-color)
+    h3
+        font-size: 1rem
+        font-weight: 700
+        color: var(--txt-black)
+    p
+        font-size: 0.75rem
+        color: var(--txt-light-color)

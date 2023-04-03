@@ -10,14 +10,19 @@ import { Task } from 'src/app/types/Task';
 export class TaskComponent {
 
   @Input() task: Task = {} as Task;
-  @Output() deleteTask: EventEmitter<string> = new EventEmitter(); 
-  completed: boolean = false;
+  @Output() deleteTask: EventEmitter<string> = new EventEmitter();
+  @Output() toggleCompleted: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   deleteClick() {
     if (this.task.id !== undefined) {
       this.deleteTask.emit(this.task.id.toString());
+    }
+  }
+  toggleClicked() {
+    if (this.task.id !== undefined) {
+      this.toggleCompleted.emit({id: this.task.id, value: !this.task.completed});
     }
   }
 }

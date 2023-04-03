@@ -32,7 +32,7 @@
         <section class="tasks">
             <h2>tasks</h2>      
             <ng-container *ngFor="let task of tasks">
-                <app-task (deleteTask)="deleteTask($event)" [task]="task"></app-task>
+                <app-task (deleteTask)="deleteTask($event)" (toggleCompleted)="toggleCompleted($event)" [task]="task"></app-task>
             </ng-container>   
         </section>
     </div>

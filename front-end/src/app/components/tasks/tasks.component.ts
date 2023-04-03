@@ -32,7 +32,8 @@ export class TasksComponent implements OnInit {
           this.tasks.push({
             id: t.id,
             title: t.title,
-            description: t.description
+            description: t.description,
+            completed: t.completed
           });
         }
       },
@@ -57,6 +58,12 @@ export class TasksComponent implements OnInit {
   }
   deleteTask(id: string) {
     this.tasksService.deleteTask(id).subscribe({
+      next: (d) => this.getTasks(),
+      error: (e) => console.log(e)
+    });
+  }
+  toggleCompleted(pair: any) {
+    this.tasksService.toggleCompletionOfTask(pair.id, pair.value).subscribe({
       next: (d) => this.getTasks(),
       error: (e) => console.log(e)
     });

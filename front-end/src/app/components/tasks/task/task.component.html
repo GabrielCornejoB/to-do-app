@@ -1,5 +1,5 @@
 <div class="task-container">
-    <span (click)="completed = !completed" class="checkbox" [ngClass]="{'completed': completed}"><ng-container *ngIf="completed"><span class="material-symbols-outlined">done</span></ng-container></span>
+    <span (click)="toggleClicked()" class="checkbox" [ngClass]="{'completed': task.completed}"><ng-container *ngIf="task.completed"><span class="material-symbols-outlined">done</span></ng-container></span>
     <div class="task-content">
         <h3>{{task.title}}</h3>
         <p>{{task.description}}</p>

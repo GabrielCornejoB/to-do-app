@@ -26,4 +26,7 @@ export class TasksService {
   deleteTask(id: string): Observable<any> {
     return this.http.delete(this.URL + id + '/', this.urlOptions);
   }
+  toggleCompletionOfTask(id: string, value: boolean): Observable<any> {
+    return this.http.patch(this.URL + id + '/', {"completed": value}, this.urlOptions);
+  }
 }

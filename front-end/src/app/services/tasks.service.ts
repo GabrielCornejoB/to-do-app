@@ -23,4 +23,7 @@ export class TasksService {
   createTask(task: Task): Observable<any> {
     return this.http.post(this.URL, task, this.urlOptions);
   }
+  deleteTask(id: string): Observable<any> {
+    return this.http.delete(this.URL + id + '/', this.urlOptions);
+  }
 }

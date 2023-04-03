@@ -30,6 +30,7 @@ export class TasksComponent implements OnInit {
         this.tasks = [];
         for (let t of d) {
           this.tasks.push({
+            id: t.id,
             title: t.title,
             description: t.description
           });
@@ -52,6 +53,12 @@ export class TasksComponent implements OnInit {
         console.log(e);
         this.taskForm.reset();
       }
+    });
+  }
+  deleteTask(id: string) {
+    this.tasksService.deleteTask(id).subscribe({
+      next: (d) => this.getTasks(),
+      error: (e) => console.log(e)
     });
   }
 }

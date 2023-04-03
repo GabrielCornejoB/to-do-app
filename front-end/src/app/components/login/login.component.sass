@@ -19,7 +19,34 @@
         border-radius: 15px
         padding: 50px
         box-sizing: border-box
+        .input-wrapper
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            gap: 5px
+            width: 100%
+            input
+                border: none
+                outline: none
+                background: var(--elements-color)
+                padding: 15px 20px
+                font-size: 1.5rem
+                border-radius: 10px
+                font-weight: 300
+                box-sizing: border-box
+                width: 100%
+            ::placeholder
+                color: var(--txt-light-color)
+                opacity: 1
+            :-ms-input-placeholder
+                color: var(--txt-light-color)
+            ::-ms-input-placeholder
+                color: var(--txt-light-color)
+            label
+                color: var(--txt-light-color)
+                padding-left: 20px
         button
+            width: 100%
             font-size: 1.5rem
             padding: 15px 20px
             font-weight: 700

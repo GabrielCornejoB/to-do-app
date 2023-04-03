@@ -1,0 +1,88 @@
+$nav-height: 150px
+.tasks-container
+    display: flex
+    flex-direction: column
+    height: 100vh
+    width: 100vw
+    box-sizing: border-box
+    overflow-y: hidden
+    .tasks-header
+        display: flex
+        flex-direction: row
+        background: var(--primary-color)
+        justify-content: space-between
+        align-items: center
+        height: $nav-height
+        padding: 0 50px 
+        box-sizing: border-box
+        .logged-in, .logout
+            width: 135px
+        .logout
+            display: flex
+            flex-direction: row
+            justify-content: center
+            align-items: center
+            background: var(--elements-color)
+            height: 45px
+            border-radius: 10px
+            gap: 20px
+            transition: 0.3s
+            cursor: pointer
+            &:hover
+                background: var(--secondary-color)
+    .tasks-content
+        display: flex
+        flex-direction: row
+        height: calc(100% - $nav-height)
+        overflow-y: hidden
+        box-sizing: border-box
+        .create-task
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+            padding: 35px 0
+            background: var(--secondary-color)
+            width: 50%
+            .create-form
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: 50px
+                width: 100%
+                .input-wrapper
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    gap: 5px
+                    width: 60%
+                    input, textarea
+                        border: none
+                        outline: none
+                        background: var(--elements-color)
+                        padding: 15px
+                        font-size: 1rem
+                        border-radius: 10px
+                        box-sizing: border-box
+                        resize: none
+                        width: 100%
+                        ::placeholder
+                            color: var(--txt-light-color)
+                            opacity: 1
+                        :-ms-input-placeholder
+                            color: var(--txt-light-color)
+                        ::-ms-input-placeholder
+                            color: var(--txt-light-color)
+                    label
+                        font-size: 0.75rem
+                        padding-left: 15px
+                        color: var(--txt-light-color)
+                button
+                    width: 60%
+                    font-size: 1rem
+                    padding: 15px 0
+            .create-footer
+                height: 60px
+
+        .tasks
+            width: 50%

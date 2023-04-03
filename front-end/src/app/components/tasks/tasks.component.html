@@ -10,16 +10,22 @@
     <div class="tasks-content">
         <section class="create-task">
             <h2>create new task</h2>
-            <form class="create-form">
+            <form class="create-form" [formGroup]="taskForm" (ngSubmit)="createTask()">
                 <div class="input-wrapper">
-                    <label for="">TITLE</label>
-                    <input type="text">
+                    <label for="title">TITLE</label>
+                    <input type="text" name="title" formControlName="title">
+                    <ng-container *ngIf="taskForm.get('title')?.hasError('required') && taskForm.get('title')?.touched">
+                        <p class="error-message">Missing field</p>
+                    </ng-container>
                 </div>
                 <div class="input-wrapper">
-                    <label for="">DESCRIPTION</label>
-                    <textarea name="" id="" rows="5"></textarea>
+                    <label for="description">DESCRIPTION</label>
+                    <textarea name="description" rows="5" formControlName="description"></textarea>
+                    <ng-container *ngIf="taskForm.get('description')?.hasError('required') && taskForm.get('description')?.touched">
+                        <p class="error-message">Missing field</p>
+                    </ng-container>
                 </div>
-                <button type="submit">CREATE NEW TASK</button>
+                <button type="submit" [disabled]="taskForm.invalid">CREATE NEW TASK</button>
             </form>
             <span class="create-footer"></span>
         </section>

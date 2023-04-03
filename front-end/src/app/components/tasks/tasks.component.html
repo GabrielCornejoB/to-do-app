@@ -24,10 +24,10 @@
             <span class="create-footer"></span>
         </section>
         <section class="tasks">
-            <h2>tasks</h2>         
-            <app-task></app-task>
-            <app-task></app-task>
-            <app-task></app-task>
+            <h2>tasks</h2>      
+            <ng-container *ngFor="let task of tasks">
+                <app-task [task]="task"></app-task>
+            </ng-container>   
         </section>
     </div>
 </div>

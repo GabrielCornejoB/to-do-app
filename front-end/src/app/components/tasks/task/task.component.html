@@ -1,8 +1,8 @@
 <div class="task-container">
     <span (click)="completed = !completed" class="checkbox" [ngClass]="{'completed': completed}"><ng-container *ngIf="completed"><span class="material-symbols-outlined">done</span></ng-container></span>
     <div class="task-content">
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
+        <h3>{{task.title}}</h3>
+        <p>{{task.description}}</p>
     </div>
     <span class="delete"><span class="material-symbols-outlined">close</span></span>
 </div>

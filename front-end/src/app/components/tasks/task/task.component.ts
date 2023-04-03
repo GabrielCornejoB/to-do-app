@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Task } from 'src/app/types/Task';
 
 @Component({
   selector: 'app-task',
@@ -6,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./task.component.sass']
 })
 export class TaskComponent {
-  title: string = "Titulo de la tarea";
-  description: string = "Descripcion de la tarea";
+  @Input() task: Task = {} as Task;
   completed: boolean = false;
 }

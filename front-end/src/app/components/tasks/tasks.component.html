@@ -1,11 +1,17 @@
 <div class="tasks-container">
     <header class="tasks-header">
         <span class="logged-in"></span>
-        <h1>to-do list</h1>
-        <a class="logout">
-            <span class="material-symbols-outlined">logout</span>
-            <span>logout</span>
-        </a>
+        <h1>to-do list</h1>      
+        <a (click)="isLogged = !isLogged" class="logout">
+            <ng-container *ngIf="isLogged">
+                <span class="material-symbols-outlined">logout</span>
+                <span>logout</span>
+            </ng-container> 
+            <ng-container *ngIf="!isLogged">
+                <span class="material-symbols-outlined">login</span>
+                <span>login</span>
+            </ng-container>
+        </a>    
     </header>
     <div class="tasks-content">
         <section class="create-task">

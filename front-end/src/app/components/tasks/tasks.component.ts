@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TasksService } from 'src/app/services/tasks.service';
 import { Task } from 'src/app/types/Task';
@@ -12,6 +12,7 @@ export class TasksComponent implements OnInit {
 
   tasks: Task[] = [];
   taskForm: FormGroup;
+  isLogged: boolean = false;
 
   constructor(private tasksService: TasksService, private fb: FormBuilder){
     this.taskForm = this.fb.group({

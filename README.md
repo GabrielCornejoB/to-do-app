@@ -8,7 +8,7 @@ To-Do list web application created using the following web-dev stack:
 
 **Angular** was used as the front-end framework to request the data from the back-end framework via REST, also Angular was used along side **TypeScript**, **RxJS** and **SASS**.
 
-**Django** was used as the back-end framwork, as a RESTful API, receiving requests from the front-end, connecting to the **PostgreSQL** database and then replying to the front-end with data. **Django REST framework** was used to create the data models, serializers, permissions and endpoints.
+**Django** was used as the back-end framework, as a RESTful API, receiving requests from the front-end, connecting to the **PostgreSQL** database and then replying to the front-end with data. **Django REST framework** was used to create the data models, serializers, permissions and endpoints.
 
 # **Some images of the app**
 
